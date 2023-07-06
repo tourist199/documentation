@@ -1,0 +1,46 @@
+/** Component: Annotation */
+
+.annotation {
+  position: relative;
+  display: inline-block;
+  vertical-align: text-bottom;
+  line-height: 0;
+
+  &--open {
+    --strapi-docs-annotation-toggle-icon-rotation: 0deg;
+  }
+
+  &__toggle,
+  &__toggle__icon {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  &__toggle {
+    position: relative;
+    background: var(--strapi-neutral-400);
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+    outline: 0;
+    padding: 0.3rem;
+    z-index: 20;
+
+    &__icon {
+      transform: rotate(var(--strapi-docs-annotation-toggle-icon-rotation, -45deg));
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &__tooltip {
+    display: inline-block;
+    position: absolute;
+    top: var(--strapi-spacing-3);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+}
